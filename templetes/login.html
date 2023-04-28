@@ -1,0 +1,54 @@
+<html>
+<head>
+<title> Login page </title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body background="https://www.mediglobe.in/assets/img/backgrounds/1@2x.jpg">
+  <section class="vh-100">
+      <div class="container h-100" style="width:40%">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-lg-12 col-xl-11">
+            <div class="card text-black" style="border-radius: 25px;">
+              {% comment %} <div class="card-body p-md-5"> {% endcomment %}
+                <div class="justify-content-center">
+                  <div>
+    
+                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login Here</p>
+    
+                    <form class="mx-md-4" method="post">
+                      {% if login %}
+                      <div class = "alert alert-danger" role="alter">Invalid Username or password</div>
+                     {% endif %}
+                    {% csrf_token %}
+                        <div class="form-outline flex-fill mb-0">
+                          <label class="form-label" for="form3Example1c">Email</label>
+                          <input type="text" id="form3Example1c" class="form-control" name="email" required/>
+                        </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <label class="form-label" for="form3Example4c">Password</label>
+                          <input type="password" id="form3Example4c" class="form-control" name="password" required/>
+                        </div>
+                      </div>
+                  </div>
+
+    
+                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                      </div>
+                      
+                    </form>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+</html>
